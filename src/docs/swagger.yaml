@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: Employee Attendance & Payroll API
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/auth/login:
+    post:
+      summary: Login user
+  /api/employees:
+    get:
+      summary: List employees
+  /api/attendance/punch-in:
+    post:
+      summary: Punch in
+  /api/attendance/punch-out:
+    post:
+      summary: Punch out
+  /api/payroll/{employeeId}:
+    get:
+      summary: Generate payroll
