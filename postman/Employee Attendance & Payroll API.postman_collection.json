@@ -1,0 +1,889 @@
+{
+  "info": {
+    "_postman_id": "b1fc2805-7696-4070-b629-7884a70b48e5",
+    "name": "Employee Attendance & Payroll API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50429163",
+    "_collection_link": "https://go.postman.co/collection/50429163-b1fc2805-7696-4070-b629-7884a70b48e5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth - Admin",
+      "item": [
+        {
+          "name": "Admin Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"admin\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/auth/register",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@test.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/auth/login",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin Profile",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/auth/profile",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth - Employee",
+      "item": [
+        {
+          "name": "Employee Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"emp1056@test.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"employee\",\r\n  \"employeeId\": \"696b3331a73687639cd5833b\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/auth/register",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Employee Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"emp1056@test.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/auth/login",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Employee Profile",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYmU2MzZkN2Q0YmZkNmY2MGZiYjMiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3Njg3MzQzODAsImV4cCI6MTc2OTMzOTE4MH0.pkV8f9yCAFrVJS_jpdHZP_cZRKXR_UPsQy7uL75PsOI",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/auth/profile",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employees (Admin)",
+      "item": [
+        {
+          "name": "Create Employee",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Ravi Kumar\",\r\n  \"employeeCode\": \"EMP1100\",\r\n  \"department\": \"Software Developer\",\r\n  \"baseSalary\": 45000,\r\n  \"status\": \"active\",\r\n  \"joiningDate\": \"2024-01-15\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/employees",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Employees",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Ravi Kumar\",\r\n  \"employeeCode\": \"EMP1100\",\r\n  \"department\": \"Software Developer\",\r\n  \"baseSalary\": 45000,\r\n  \"status\": \"active\",\r\n  \"joiningDate\": \"2024-01-15\"\r\n}\r\n"
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/employees",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Employee by ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/employees/696b3331a73687639cd58337",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employees",
+                "696b3331a73687639cd58337"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Ravi Kumar\",\r\n  \"employeeCode\": \"EMP1100\",\r\n  \"department\": \"Software Developer\",\r\n  \"baseSalary\": 35000,\r\n  \"status\": \"inactive\",\r\n  \"joiningDate\": \"2024-01-15\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/employees/696cb27b6d7d4bfd6f60fb76",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employees",
+                "696cb27b6d7d4bfd6f60fb76"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/employees/696cb27b6d7d4bfd6f60fb76",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employees",
+                "696cb27b6d7d4bfd6f60fb76"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Employees (Pagination)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/employees?page=1&limit=10",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Attendance (Employee)",
+      "item": [
+        {
+          "name": "Punch In",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZiYmM4NzQ4MWMyZGJkZjY1YTA3NTYiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3Njg3MzY4MDUsImV4cCI6MTc2OTM0MTYwNX0.l_Xpx8jPRpXNUG3ywZedzeu-d72gW9-42tZsxTDd1JQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/attendance/punch-in",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "attendance",
+                "punch-in"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Punch Out",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjY2JjODZkN2Q0YmZkNmY2MGZiZmQiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3Njg3Mzc4NjcsImV4cCI6MTc2OTM0MjY2N30.jBuHlnVpx29ZsMnjfIcnUAVkfn1qDb2QiYOcsA--Ew4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/attendance/punch-out",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "attendance",
+                "punch-out"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get My Attendance",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZiYmM4NzQ4MWMyZGJkZjY1YTA3NTYiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3Njg3MzY4MDUsImV4cCI6MTc2OTM0MTYwNX0.l_Xpx8jPRpXNUG3ywZedzeu-d72gW9-42tZsxTDd1JQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/attendance/696b3331a73687639cd58337",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "attendance",
+                "696b3331a73687639cd58337"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Attendance (Admin)",
+      "item": [
+        {
+          "name": "Get Attendance",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjYWMxNzZkN2Q0YmZkNmY2MGZiNjEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3MzAyNTIsImV4cCI6MTc2OTMzNTA1Mn0.yofvXqhBYaazbWmZOLH2SuEuAJUme4VLn_aXZFTTmTY",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/attendance/696b3331a73687639cd58337",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "attendance",
+                "696b3331a73687639cd58337"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Leaves",
+      "item": [
+        {
+          "name": "Apply Leave",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/leaves/my",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "leaves",
+                "my"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Approve Leave",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjZjg5ZTE0NmRmMDk2M2FlNTg3MjkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3NDkyMjEsImV4cCI6MTc2OTM1NDAyMX0._KW9C72NElvESdLxS4s51IhXOoRHli9yn8q1qRWG20k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/leaves/696cf859146df0963ae58726/approve",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "leaves",
+                "696cf859146df0963ae58726",
+                "approve"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get My Leaves",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjN2MxYmVkN2ZlYmEwOTgwZmY5YzQiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3Njg3NDAyODUsImV4cCI6MTc2OTM0NTA4NX0.2EQSw-xdH2-sly_kFxpZMI14vZUnvCaammwLe-SUJHo",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/leaves/my",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "leaves",
+                "my"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payroll",
+      "item": [
+        {
+          "name": "Get Payroll",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjZjg5ZTE0NmRmMDk2M2FlNTg3MjkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3NDkyMjEsImV4cCI6MTc2OTM1NDAyMX0._KW9C72NElvESdLxS4s51IhXOoRHli9yn8q1qRWG20k",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/payroll/696b3331a73687639cd58337?month=1&year=2026",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "payroll",
+                "696b3331a73687639cd58337"
+              ],
+              "query": [
+                {
+                  "key": "month",
+                  "value": "1"
+                },
+                {
+                  "key": "year",
+                  "value": "2026"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Upload",
+      "item": [
+        {
+          "name": "Uploaded Image/Dcouments",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjN2MxYmVkN2ZlYmEwOTgwZmY5YzQiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3Njg3NDAyODUsImV4cCI6MTc2OTM0NTA4NX0.2EQSw-xdH2-sly_kFxpZMI14vZUnvCaammwLe-SUJHo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "86c332c3-a5fc-4789-88fd-1ae5e10dc305",
+                  "src": "/C:/Users/sai charan reddy/Downloads/HIC unit-3.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/upload",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Reports Summary",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjZjg5ZTE0NmRmMDk2M2FlNTg3MjkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3NDkyMjEsImV4cCI6MTc2OTM1NDAyMX0._KW9C72NElvESdLxS4s51IhXOoRHli9yn8q1qRWG20k",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/reports/summary",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "summary"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reports montly",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTZjZjg5ZTE0NmRmMDk2M2FlNTg3MjkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Njg3NDkyMjEsImV4cCI6MTc2OTM1NDAyMX0._KW9C72NElvESdLxS4s51IhXOoRHli9yn8q1qRWG20k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "https://employee-attendance-payroll.onrender.com/api/reports/monthly?month=1&year=2026",
+              "protocol": "https",
+              "host": [
+                "employee-attendance-payroll",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "reports",
+                "monthly"
+              ],
+              "query": [
+                {
+                  "key": "month",
+                  "value": "1"
+                },
+                {
+                  "key": "year",
+                  "value": "2026"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
