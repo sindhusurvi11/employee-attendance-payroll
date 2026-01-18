@@ -4,6 +4,7 @@ const app = express();
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/api/auth", authRoutes);
@@ -32,8 +33,12 @@ app.use("/api/upload", uploadRoutes);
 
 
 // Health check
-app.get("/api/health", (req, res) => {
-  res.status(200).json({ status: "OK" });
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    message: "Employee Attendance & Payroll API is running"
+  });
 });
+
 
 module.exports = app;

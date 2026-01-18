@@ -23,6 +23,8 @@ const getEmployees = async (req, res, next) => {
   }
 };
 
+
+
 const getEmployeeById = async (req, res, next) => {
   try {
     const employee = await service.getEmployeeById(req.params.id);

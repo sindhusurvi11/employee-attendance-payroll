@@ -3,13 +3,14 @@ const response = require("../utils/response.util");
 
 const register = async (req, res, next) => {
   try {
-    const { email, password, role } = req.body;
-    const user = await registerUser(email, password, role);
+    const { email, password, role, employeeId } = req.body;
+    const user = await registerUser(email, password, role, employeeId);
 
     response.success(res, "User registered successfully", {
       id: user._id,
       email: user.email,
       role: user.role,
+      employeeId: user.employee,
     });
   } catch (error) {
     next(error);

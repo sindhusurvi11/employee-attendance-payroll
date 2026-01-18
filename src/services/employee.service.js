@@ -4,7 +4,12 @@ const createEmployee = async (data) => {
   return Employee.create(data);
 };
 
-const getEmployees = async (page = 1, limit = 10) => {
+const getEmployees = async (page = 1, limit = 10, sortBy = "employeeCode", order = "asc") => {
+  const skip = (page - 1) * limit;
+
+  const sortOrder = order === "desc" ? -1 : 1;
+
+  const getEmployees = async (page = 1, limit = 10) => {
   const skip = (page - 1) * limit;
 
   const employees = await Employee.find()
@@ -16,6 +21,9 @@ const getEmployees = async (page = 1, limit = 10) => {
 
   return { employees, total };
 };
+
+};
+
 
 const getEmployeeById = async (id) => {
   const employee = await Employee.findById(id);
