@@ -1,4 +1,4 @@
-const success = (res, message, data = {}) => {
+const success = (res, message, data) => {
   return res.status(200).json({
     success: true,
     message,
@@ -6,6 +6,11 @@ const success = (res, message, data = {}) => {
   });
 };
 
-module.exports = {
-  success,
+const error = (res, message, status = 500) => {
+  return res.status(status).json({
+    success: false,
+    message,
+  });
 };
+
+module.exports = { success, error };

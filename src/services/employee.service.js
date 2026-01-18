@@ -1,4 +1,4 @@
-const Employee = require("../models/Employee.model");
+/*const Employee = require("../models/Employee.model");
 
 const createEmployee = async (data) => {
   return Employee.create(data);
@@ -24,6 +24,57 @@ const getEmployees = async (page = 1, limit = 10, sortBy = "employeeCode", order
 
 };
 
+
+const getEmployeeById = async (id) => {
+  const employee = await Employee.findById(id);
+  if (!employee) throw new Error("Employee not found");
+  return employee;
+};
+
+const updateEmployee = async (id, data) => {
+  const employee = await Employee.findByIdAndUpdate(id, data, { new: true });
+  if (!employee) throw new Error("Employee not found");
+  return employee;
+};
+
+const deleteEmployee = async (id) => {
+  const employee = await Employee.findByIdAndDelete(id);
+  if (!employee) throw new Error("Employee not found");
+};
+
+module.exports = {
+  createEmployee,
+  getEmployees,
+  getEmployeeById,
+  updateEmployee,
+  deleteEmployee,
+};
+*/
+
+const Employee = require("../models/Employee.model");
+
+const createEmployee = async (data) => {
+  return Employee.create(data);
+};
+
+const getEmployees = async (
+  page = 1,
+  limit = 10,
+  sortBy = "employeeCode",
+  order = "asc"
+) => {
+  const skip = (page - 1) * limit;
+  const sortOrder = order === "desc" ? -1 : 1;
+
+  const employees = await Employee.find()
+    .sort({ [sortBy]: sortOrder })
+    .skip(skip)
+    .limit(limit);
+
+  const total = await Employee.countDocuments();
+
+  return { employees, total };
+};
 
 const getEmployeeById = async (id) => {
   const employee = await Employee.findById(id);
